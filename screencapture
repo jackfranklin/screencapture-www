@@ -25,11 +25,14 @@ url=$(echo "$out" | sed 's/.*"original":"\([^"]*\)".*/\1/' | tr -d '\\')
 # Copy the URL into the pastebuffer.
 pbcopy <<< "$url"
 
+#growlnotify
+growlnotify  -m "Image Uploaded"
+
+
 # Also open the URL in the browser.
 open "$url"
 
-#growlnotify
-growlnotify  -m "Image Uploaded: $url"
+
 
 # Clean up the temporary local image.
 rm "$TMP"
