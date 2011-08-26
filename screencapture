@@ -26,7 +26,7 @@ url=$(echo "$out" | sed 's/.*"original":"\([^"]*\)".*/\1/' | tr -d '\\')
 pbcopy <<< "$url"
 
 #growlnotify
-growlnotify  -m "Image Uploaded"
+growlnotify -a 'Google Chrome' -m 'imgur URL copied into pastebuffer' 'Image uploaded'
 
 
 # Also open the URL in the browser.
